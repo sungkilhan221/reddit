@@ -22,11 +22,13 @@ export async function Navbar() {
           src={redditMobile}
           alt="Reddit mobile icon"
           className="h-10 w-fit"
+          priority
         />
         <Image
           src={RedditText}
           alt="Reddit Desktop"
           className="h-9 w-fit hidden lg:block"
+          priority
         />
       </Link>
 

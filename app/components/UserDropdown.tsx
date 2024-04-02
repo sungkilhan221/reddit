@@ -9,6 +9,7 @@ import {
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import Image from "next/image";
 
 interface iAppProps {
   userImage: string | null;
@@ -21,12 +22,11 @@ export function UserDropdown({ userImage }: iAppProps) {
         <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex items-center gap-x-3">
           <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5" />
 
-          <img
-            src={
-              userImage ??
-              "https://static.vecteezy.com/system/resources/previews/009/292/244/original/default-avatar-icon-of-social-media-user-vector.jpg"
-            }
+          <Image
+            src={userImage ?? "/avatar.jpg"}
             alt="avatar"
+            width={32}
+            height={32}
             className="rounded-full h-8 w-8 hidden lg:block"
           />
         </div>
