@@ -1,8 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowDown, ArrowUp, Loader2 } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useFormStatus } from "react-dom";
+import { PiArrowFatDown, PiArrowFatUp } from "react-icons/pi";
 
 export function SubmitButton({ text }: { text: string }) {
   const { pending } = useFormStatus();
@@ -44,12 +45,17 @@ export function UpVote() {
   return (
     <>
       {pending ? (
-        <Button variant="outline" size="icon" disabled>
+        <Button variant="ghost" size="icon" disabled>
           <Loader2 className="w-4 h-4 animate-spin" />
         </Button>
       ) : (
-        <Button variant="outline" size="sm" type="submit">
-          <ArrowUp className="h-4 w-4" />
+        <Button
+          variant="ghost"
+          size="icon"
+          type="submit"
+          className="hover:bg-gray-200 group"
+        >
+          <PiArrowFatUp className="h-6 w-6 text-muted-foreground group-hover:text-primary" />
         </Button>
       )}
     </>
@@ -62,12 +68,17 @@ export function DownVote() {
   return (
     <>
       {pending ? (
-        <Button variant="outline" size="icon" disabled>
+        <Button variant="ghost" size="icon" disabled>
           <Loader2 className="w-4 h-4 animate-spin" />
         </Button>
       ) : (
-        <Button variant="outline" size="sm" type="submit">
-          <ArrowDown className="h-4 w-4" />
+        <Button
+          variant="ghost"
+          size="icon"
+          type="submit"
+          className="hover:bg-gray-200 group"
+        >
+          <PiArrowFatDown className="h-6 w-6 text-muted-foreground group-hover:text-primary" />
         </Button>
       )}
     </>
