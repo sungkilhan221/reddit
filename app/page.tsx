@@ -62,7 +62,7 @@ export default function Home({
   searchParams: { page: string };
 }) {
   return (
-    <div className="max-w-[1000px] mx-auto flex gap-x-10 ">
+    <div className="max-w-[1000px] mx-auto flex gap-x-10">
       <div className="w-[65%] flex flex-col gap-y-5">
         <CreatePostCard />
         <Suspense fallback={<SuspenseCard />} key={searchParams.page}>

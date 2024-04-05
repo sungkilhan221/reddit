@@ -27,9 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <div className="bg-[#DAE0E6] dark:bg-black pt-4 pb-10">
-            {children}
-          </div>
+          <div className="pt-4 pb-10">{children}</div>
 
           <Toaster />
         </ThemeProvider>
