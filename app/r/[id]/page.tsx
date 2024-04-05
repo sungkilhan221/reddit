@@ -1,22 +1,21 @@
-import { updateSubDescription } from "@/app/actions";
 import CreatePostCard from "@/app/components/CreatePostCard";
 import Pagination from "@/app/components/Pagination";
 import { PostCard } from "@/app/components/PostCard";
 import { SubDescriptionForm } from "@/app/components/SubDescriptionForm";
-import { SaveButton } from "@/app/components/SubmitButtons";
 import prisma from "@/app/lib/db";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Textarea } from "@/components/ui/textarea";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Cake, FileQuestion } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { unstable_noStore as noStore } from "next/cache";
 
 const perPage = 10;
 
 async function getData(name: string, searchParams: string) {
+  noStore();
   const [count, data] = await prisma.$transaction([
     prisma.post.count({
       where: {
