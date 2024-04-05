@@ -59,14 +59,14 @@ export default function SettingsForm({
       />
 
       {state?.status === "error" && (
-        <p className="text-red-500 mt-1">{state.message}</p>
+        <p className="mt-1 text-destructive">{state.message}</p>
       )}
 
       <div className="w-full flex mt-5 gap-x-5 justify-end">
         <Button variant="secondary" asChild type="button">
           <Link href="/">Cancel</Link>
         </Button>
-        <SubmitButton />
+        <SubmitButton text="Change Username" />
       </div>
     </form>
   );
